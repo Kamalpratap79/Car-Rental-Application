@@ -3,6 +3,8 @@ package in.project.CarRentalApplication.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +13,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
 @Component
-public class JWTUtil {
+public class JwtUtil {
 
     public String extractUserName(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -61,7 +62,7 @@ public class JWTUtil {
     }
 
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode("413F4428472B4B6250655368566D597033733676397244226452948404D6351");
+        byte[] keyBytes = Decoders.BASE64.decode("NFjY7G5R7dyPUU94WMUIEDGzlxMeNzpWgRiQW92aOSY");
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
