@@ -1,4 +1,4 @@
-package in.project.CarRentalApplication.service;
+package in.project.CarRentalApplication.service.auth;
 
 import in.project.CarRentalApplication.dto.SignupRequest;
 import in.project.CarRentalApplication.dto.UserDto;
@@ -6,7 +6,6 @@ import in.project.CarRentalApplication.entity.User;
 import in.project.CarRentalApplication.enums.UserRole;
 import in.project.CarRentalApplication.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.SecondaryRow;
 import org.springframework.stereotype.Service;
 
 @Service

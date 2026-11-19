@@ -1,4 +1,4 @@
-package in.project.CarRentalApplication.service;
+package in.project.CarRentalApplication.service.auth;
 
 import in.project.CarRentalApplication.dto.SignupRequest;
 import in.project.CarRentalApplication.dto.UserDto;

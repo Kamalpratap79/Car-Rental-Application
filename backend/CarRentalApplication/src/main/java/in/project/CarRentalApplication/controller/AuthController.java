@@ -2,7 +2,7 @@ package in.project.CarRentalApplication.controller;
 
 import in.project.CarRentalApplication.dto.SignupRequest;
 import in.project.CarRentalApplication.dto.UserDto;
-import in.project.CarRentalApplication.service.AuthService;
+import in.project.CarRentalApplication.service.auth.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
