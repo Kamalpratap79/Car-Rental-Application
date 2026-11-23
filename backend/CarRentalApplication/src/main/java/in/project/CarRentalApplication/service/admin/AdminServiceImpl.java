@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
 
     private final CarRepository carRepository;
 
@@ -32,7 +32,7 @@ public class AdminServiceImpl implements AdminService{
             car.setImage(carDto.getImage().getBytes());
             carRepository.save(car);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
@@ -59,5 +59,30 @@ public class AdminServiceImpl implements AdminService{
                 .orElse(null);
     }
 
-
+    @Override
+    public boolean updateCar(Long CarId, CarDto carDto) throws IOException {
+        Optional<Car> optionalCar = carRepository.findById(CarId);
+        if (optionalCar.isPresent()) {
+            Car existingCar = optionalCar.get();
+            if (carDto.getImage() != null) {
+                existingCar.setImage(carDto.getImage().getBytes());
+            }
+            existingCar.setPrice(carDto.getPrice());
+            existingCar.setName(carDto.getName());
+            existingCar.setYear(carDto.getYear());
+            existingCar.setType(carDto.getType());
+            existingCar.setColor(carDto.getColor());
+            existingCar.setBrand(carDto.getBrand());
+            existingCar.setTransmission(carDto.getTransmission());
+            existingCar.setDescription(carDto.getDescription());
+            carRepository.save(existingCar);
+            carRepository.save(existingCar);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
+
+
