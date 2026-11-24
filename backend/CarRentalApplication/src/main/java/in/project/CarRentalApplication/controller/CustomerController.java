@@ -2,6 +2,7 @@ package in.project.CarRentalApplication.controller;
 
 import in.project.CarRentalApplication.dto.BookACarDto;
 import in.project.CarRentalApplication.dto.CarDto;
+import in.project.CarRentalApplication.dto.SearchCarDto;
 import in.project.CarRentalApplication.entity.BookACar;
 import in.project.CarRentalApplication.entity.Car;
 import in.project.CarRentalApplication.service.customer.CustomerService;
@@ -44,5 +45,10 @@ public class CustomerController {
     @GetMapping("/car/bookings/{userId}")
     public ResponseEntity<List<BookACarDto>> getBookingsByUserId(@PathVariable Long userId){
         return ResponseEntity.ok(customerService.getBookingByUserId(userId));
+    }
+
+    @PostMapping("/car/search")
+    public ResponseEntity<?> searchCar(@RequestBody SearchCarDto searchCarDto){
+        return ResponseEntity.ok(customerService.searchCar(searchCarDto));
     }
 }
