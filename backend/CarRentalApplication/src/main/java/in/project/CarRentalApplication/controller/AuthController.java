@@ -5,7 +5,7 @@ import in.project.CarRentalApplication.entity.User;
 import in.project.CarRentalApplication.repository.UserRepository;
 import in.project.CarRentalApplication.service.auth.AuthService;
 import in.project.CarRentalApplication.service.jwt.UserService;
-import in.project.CarRentalApplication.utils.JwtUtil;
+import in.project.CarRentalApplication.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class AuthController {
     private final AuthService authService;
     private final AuthenticationManager authenticationManager;
     private final UserService userService;
-    private final JwtUtil jwtUtil;
+    private final JwtUtils jwtUtil;
     private final UserRepository userRepository;
 
     @PostMapping("/signup")

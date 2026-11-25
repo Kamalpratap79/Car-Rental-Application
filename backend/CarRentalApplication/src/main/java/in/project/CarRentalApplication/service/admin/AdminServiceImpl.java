@@ -38,8 +38,8 @@ public class AdminServiceImpl implements AdminService {
             car.setPrice(carDto.getPrice());
             car.setYear(carDto.getYear());
             car.setType(carDto.getType());
-            car.setDescription(car.getDescription());
-            car.setTransmission(car.getTransmission());
+            car.setDescription(carDto.getDescription());
+            car.setTransmission(carDto.getTransmission());
             car.setImage(carDto.getImage().getBytes());
             carRepository.save(car);
             return true;

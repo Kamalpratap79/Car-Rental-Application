@@ -20,6 +20,7 @@ public class AdminController {
 
     private final AdminService adminService;
 
+    @PostMapping("/car")
     public ResponseEntity<?> postCar(@ModelAttribute CarDto carDto) throws IOException {
         boolean success = adminService.postCar(carDto);
         if (success) {
@@ -58,7 +59,7 @@ public class AdminController {
     }
 
     @GetMapping("/car/bookings")
-    private ResponseEntity<List<BookACarDto>> getBookings(){
+    public ResponseEntity<List<BookACarDto>> getBookings(){
         return ResponseEntity.ok(adminService.getBooking());
     }
 

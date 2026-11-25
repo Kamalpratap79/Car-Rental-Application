@@ -1,7 +1,7 @@
 package in.project.CarRentalApplication.configuration;
 
 import in.project.CarRentalApplication.service.jwt.UserService;
-import in.project.CarRentalApplication.utils.JwtUtil;
+import in.project.CarRentalApplication.utils.JwtUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +23,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtUtil jwtUtil;
+    private final JwtUtils jwtUtil;
     private final UserService userService;
 
     @Override
