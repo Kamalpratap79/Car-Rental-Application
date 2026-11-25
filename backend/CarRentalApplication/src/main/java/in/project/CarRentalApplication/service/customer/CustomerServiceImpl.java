@@ -49,6 +49,8 @@ public class CustomerServiceImpl implements CustomerService{
             bookACar.setUser(optionalUser.get());
             bookACar.setCar(existingCar);
             bookACar.setBookCarStatus(BookCarStatus.PENDING);
+            bookACar.setFromDate(bookACarDto.getFromDate());
+            bookACar.setToDate(bookACarDto.getToDate());
             long diffInMilliSeconds = bookACarDto.getToDate().getTime() - bookACarDto.getFromDate().getTime();
             long days = TimeUnit.MILLISECONDS.toDays(diffInMilliSeconds);
             bookACar.setDays(days);
