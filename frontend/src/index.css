@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+@theme {
     --color-primary: #0563C1;
     --color-navy: #082746;
     --color-page: #F5F7FA;
@@ -12,7 +12,7 @@ body {
     margin: 0;
     background-color: #F5F7FA;
     color: #0F172A;
-    font-family: var(--font-sans);
+    font-family: Arial, sans-serif;
 }
 
 button {
